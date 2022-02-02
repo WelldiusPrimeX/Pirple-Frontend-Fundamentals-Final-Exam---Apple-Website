@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Apple Website</title>
+<style id="jsbin-css">
+ /*Global*/
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+}
+
+html{
+  font-size: 10px;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a{
+  display: block;
+  text-decoration: none;
+}
+
+.container{
+  max-width: 98rem;
+    margin: 0 auto;
+    padding:0 2.2rem;
+}
+
+/*header*/
+header{
+  position:fixed;
+    top:0;
+    width:100%;
+    z-index:1400;
+    height:2rem;
+    background-color:rgba(0,0,0,0.8);
+    backdrop-filter: blur(2rem);
+	 padding-right: 150px;
+	 padding-bottom: 40px;
+}
+
+.nav-list{
+  list-style: none;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  margin: 0 -1rem;
+}
+
+.nav-list-mobile{
+  display: none;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  color: #ffffff;
+  padding: 0 1rem;
+  transition: opacity 0.5s;
+}
+
+.nav-link:hover{
+  opacity: 0.7;
+}
+
+/*the apple logo, the search and the bag logo in the header are from apple i tried searching for a better alternative and i realised that it was taking a lot of my time,yet i still couldnt find any so i used the ones from apple */
+.nav-link-apple{
+  width: 1.6rem;
+  background: url("https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_apple_image__cxwwnrj0urau_small.svg") center no-repeat;
+  height:3.4rem;
+}
+/*i searched for a search svg that would look good but i couldnt find any so i had to settle for this one*/
+.nav-link-search{
+  width: 1.6rem;
+  background: url("https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_search_image__fca9mfoh8a2q_large.svg") center no-repeat;
+  height:3.4rem;
+}
+
+.nav-link-bag{
+  width: 1.6rem;
+  background: url("https://www.apple.com/ac/globalnav/6/en_US/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_bag_image__bmix8075eg4i_large.svg") center no-repeat;
+  height:3.4rem;
+}
+/*iPhone 12 section*/
+
+.iphone-12{
+  background: url("https://hd2.tudocdn.net/971620?w=1200&h=900") center no-repeat;
+  margin-top: 4.4rem;
+}
+
+.title{
+  color: white;
+  text-align: center;
+  padding-top: 5.5rem;
+}
+
+.title-heading{
+  font-size: 5.6rem;
+  line-height: 1.07143;
+  letter-spacing: -0.005rem;
+}
+
+.sub-heading{
+  font-size: 2.65rem;
+  margin-top:.6rem;
+  letter-spacing: .008rem;
+  font-weight:400;
+}
+.title-price{
+  font-size: 1.7rem;
+  color:#888;
+}
+.cta{
+  text-align:center;
+  margin-top:1.8rem;
+}
+
+.cta-link{
+  color:#66bbff;
+  font-size:2.1rem;
+  display:inline-block;
+}
+
+.cta-link:nth-child(2){
+  margin-left:2.6rem;
+}
+
+
+.cta-link:hover{
+  border-bottom:2px solid #66bbff;
+}
+
+
+/*iphone-12-pro section*/
+
+
+.iphone-12-pro{
+  background: url("https://www.apple.com/newsroom/images/product/iphone/standard/Apple_announce-iphone12pro_10132020.jpg.og.jpg?202106011016") center no-repeat;
+}
+.title-dark{
+  color: ;
+}
+.cta-link-darker{
+  color: #0070c9;
+}
+.cta-link-darker:hover{
+ border-bottom-color: #0070c9;
+}
+
+.iPad-pro{
+  background: url("https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-og-202104?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1618674417000") center no-repeat;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+ 
+.iWatch{
+  background: url("https://www.apple.com/uk/watch/home/images/meta/gps-lte/og__n5qzveqr596m.png") center no-repeat;
+}
+  
+.iMac{
+  background: url("https://cdn.wccftech.com/wp-content/uploads/2021/04/iMac-all-colors.jpg") center no-repeat;
+}
+ 
+.Buy-a-mac{
+
+  background: url("data:image/png;base64,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") center no-repeat;
+}
+ 
+.Fitness{
+  background: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/apple-fitness-plus-1608278948.jpg") center no-repeat;
+}
+.Card{
+  background: url("data:image/jpeg;base64,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")
+}
+.tv{
+  background: url("https://bubbleblabber-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/Central-Park-Season-2-Cast.jpg") center no-repeat;
+}
+.title-dark{
+  color: black;
+}
+
+.ending{
+  font-size: 1.4rem;
+  color: #888;
+  background-color: gainsboro;
+  filter: brightness(112%);
+  background-position: center;
+  padding-right: 150px;
+  padding-left: 150px;
+  padding-top:20px;
+}
+.footer{
+  font-size: 1.4rem;
+  color: #888;
+  background-color: gainsboro;
+  filter: brightness(110%);
+  padding-right: 100px;
+  padding-top:20px
+}
+.footer{
+  display:flex;
+  justify-content:space-evenly;
+  
+}
+.footer2{
+font-size: 1.4rem;
+  color: #888;
+  background-color: gainsboro;
+  filter: brightness(110%);
+  padding-top:100px
+   background-position: center;
+   padding-bottom:5px;
+    padding-right: 150px;
+  padding-left: 150px;
+}
+.footer3{
+font-size: 1.4rem;
+  color: #888;
+  background-color: gainsboro;
+  filter: brightness(110%);
+   padding-left: 150px;
+  padding-bottom:20px;
+}
+.first{
+justify-content:space-evenly;
+padding-bottom:20px;
+}
+.linkup{
+    color:inherit;	
+}
+.linkup:hover{
+text-decoration:underline;
+}
+ul{
+list-style-type:none;
+}
+ul>li{
+margin: 1em 0;
+}
+.liner{
+text-align:center;margin: 1em 0;
+}
+strong{
+color:#343434;
+}
+.linkerage{
+color:#66bbff;;
+}
+.linkerage:hover{
+cursor:pointer;
+text-decoration:underline;
+}
+.linkos{
+color:inherit;
+}
+.linkos:hover{
+cursor:pointer;
+text-decoration:underline;
+}
+/*moved to the bottom of all section styles to keep consistent styles*/
+.Legend{
+    height: 69.2rem;
+    background-size: auto 100rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: .6rem solid #fff;
+    border-bottom: .6rem solid #fff;
+}
+.iphone-12{
+  border-top:none;
+}
+/*end*/
+</style>
+</head>
+<body>
+ <header>
+  <div class="container">
+    <nav class="nav">
+      <ul class="nav-list nav-list-mobile">
+        <li class="nav-item">
+          <div class="mobile-menu">
+            <span class="line line-top"></span>
+            <span class="line line-bottom"></span>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="index.html" class="nav-link nav-link-apple"></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link nav-link-bag"></a>
+        </li>
+      </ul>
+      <ul class="nav-list nav-list-larger">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link nav-link-apple"></a>
+        </li> 
+        <li class="nav-item">
+          <a href="#" class="nav-link">Mac</a>
+        </li> 
+        <li class="nav-item">
+          <a href="#" class="nav-link">iPad</a>
+        </li> 
+        <li class="nav-item">
+          <a href="#" class="nav-link">iPhone</a>
+        </li> 
+        <li class="nav-item">
+          <a href="#" class="nav-link">Watch</a>
+        </li> 
+        <li class="nav-item">
+          <a href="#" class="nav-link">TV</a>
+        </li> 
+        <li class="nav-item">
+          <a href="#" class="nav-link">Music</a>
+        </li> 
+        <li class="nav-item">
+          <a href="#" class="nav-link">Support</a>
+        </li> 
+         <li class="nav-item">
+          <a href="#" class="nav-link nav-link-search" ></a>
+        </li> 
+         <li class="nav-item">
+          <a href="#" class="nav-link nav-link-bag"></a>
+        </li> 
+      </ul>
+    </nav>
+  </div>
+  </header>
+  <section class="Legend iphone-12">
+    <div class="container">
+      <div class="title title-dark">
+        <h2 class="title-heading">iPhone 12</h2>
+        <h3 class="sub-heading"> Blast past fast.</h3>
+        <p class="title-price">From $29.12/mo. for 24 mo. or $699 before trade‑in<br>
+        Buy directly from Apple with special carrier offers</p>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link">Learn more > </a>
+        <a href="#" class="cta-link">Buy > </a>
+      </div>
+    </div>
+  </section>
+  <section class="Legend iphone-12-pro">
+    <div class="container">
+      <div class="title">
+        <h2 class="title-heading">iPhone 12 Pro</h2>
+        <h3 class="sub-heading"> Its a leap year.</h3>
+        <p class="title-price">From $41.62/mo. or $999 before trade in.*<br>Buy directly from Apple with special carrier offers</p>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link cta-link-darker" >Learn more > </a>
+        <a href="#" class="cta-link cta-link-darker">Buy > </a>
+      </div>
+    </div>
+  </section>
+  <section class="Legend iPad-pro">
+    <div class="container">
+      <div class="title">
+        <h2 class="title-heading">iPad Pro</h2>
+        <h3 class="sub-heading"> Supercharged by the Apple M1 chip</h3>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link cta-link-darker">Learn more > </a>
+        <a href="#" class="cta-link cta-link-darker">Buy > </a>
+      </div>
+    </div>
+  </section>  
+<div class="grid-container"><section class="Legend iMac">
+    <div class="container">
+      <div class="title title-dark">
+        <h2 class="title-heading">iMac</h2>
+        <h3 class="sub-heading"> Say hello.</h3>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link cta-link-darker">Learn more > </a>
+        <a href="#" class="cta-link cta-link-darker">Buy > </a>
+      </div>
+    </div>
+  </section>
+  <section class="Legend iWatch">
+    <div class="container">
+      <div class="title">
+        <h2 class="title-heading"><span ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/30px-Apple_logo_white.svg.png" alt=""></span>WATCH</h2>
+        <h3 class="sub-heading"> <span style="color:red">series 6</span><br>The future of health is on your wrist.</h3>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link cta-link-darker">Learn more > </a>
+        <a href="#" class="cta-link cta-link-darker">Buy > </a>
+      </div>
+    </div>
+  </section></div>
+  <div class="grid-container"><section class="Legend Buy-a-mac">
+    <div class="container">
+      <div class="title title-dark">
+        <h2 class="title-heading">Buy a Mac or iPad for<br> college. Get AirPods.</h2>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link cta-link-darker">Save with education pricing > </a>
+      </div>
+    </div>
+  </section>
+  <section class="Legend Fitness">
+    <div class="container">
+      <div class="title title-dark">
+        <h2 class="title-heading"><span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/30px-Apple_logo_black.svg.png" alt=""></span>Fitness+</h2>
+        <h3 class="sub-heading">Fitness for all, powered by Apple Watch.</h3>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link cta-link-darker">Learn more > </a>
+        <a href="#" class="cta-link cta-link-darker">Try it free > </a>
+      </div>
+    </div>
+    </section></div>
+ <div class="grid-container"> <section class="Legend Card">
+    <div class="container">
+      <div class="title title-dark">
+        <h2 class="title-heading"><span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/30px-Apple_logo_black.svg.png" alt=""></span>Card</h2>
+        <h3 class="sub-heading"> Get up to 3% Daily Cash back<br>with every purchase.</h3>
+      </div>
+      <div class="cta">
+        <a href="#" class="cta-link cta-link-darker">Learn more > </a>
+        <a href="#" class="cta-link cta-link-darker">Apply now > </a>
+      </div>
+    </div>
+  </section>
+  <section class="Legend tv">
+    <div class="container">
+      <div class="title">
+        <h2 class="title-heading"><span style><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/30px-Apple_logo_white.svg.png" alt=""></span>tv+</h2>
+      </div>
+    </div>
+    </section></div>
+  <section class="ending">
+    <p><ol>
+    <li>Price includes a $30 AT&T, T-Mobile, Sprint, or Verizon discount. Requires activation with carrier. Monthly pricing: Available to qualified customers and requires 0% APR, 24-month installment loan with Citizens One or Apple Card Monthly Installments and iPhone activation with AT&T, Sprint, T-Mobile, or Verizon for purchases in an Apple Store. Taxes and shipping not included. Additional Apple Card Monthly Installments and iPhone Payments terms apply.</li><br>
+<li>Monthly pricing: Available to qualified customers and requires 0% APR, 24-month installment loan with Citizens One or Apple Card Monthly Installments and iPhone activation with AT&T, Sprint, T-Mobile, or Verizon for purchases in an Apple Store. Taxes and shipping not included. Additional Apple Card Monthly Installments and iPhone Payments terms apply.</li><br>
+<li>Qualified Purchasers receive Promotion Savings when they purchase an eligible Mac or eligible iPad with eligible AirPods at a Qualifying Location. Only one Promotion Product per eligible Mac or eligible iPad per Qualified Purchaser. Offer subject to availability. While supplies last. Qualified Purchasers selecting Apple Card Monthly Installments (“ACMI”) as payment type at checkout shall receive a discount equal to the value of the eligible AirPods off the price of the eligible Mac or iPad. This will result in one ACMI installment plan over 12 months for the eligible iPad or Mac discounted by the instant credit, and a second ACMI installment plan over 6 months for the full price of the eligible AirPods. Qualified Purchasers will be charged for all items in their cart, including the eligible AirPods plus any additional Upgrade Cost. If you choose the pay-in-full or one-time-payment option for an ACMI eligible purchase instead of choosing ACMI as the payment option at checkout, that purchase will be subject to the variable APR assigned to your Apple Card. Taxes and shipping are not included in ACMI transactions and are subject to your standard purchase APR. ACMI is subject to credit approval and credit limit. Variable APRs for Apple Card other than ACMI range from 10.99% to 21.99% based on creditworthiness. Rates as of April 1, 2020. See the Apple Card Customer Agreement for more information. Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch. Available for qualifying applicants in the United States. If you reside in the U.S. territories, please call Goldman Sachs at 877-255-5923 with questions about accessing this offer or applying for Apple Card. This offer cannot be combined with the Apple Employee Purchase Plan or business loyalty pricing. Availability of in-store promotion offerings may be limited by Apple Store location closures as a result of COVID-19. Additional restrictions apply. View full terms and conditions of offer here.</li><br>
+<li>$9.99/month after free trial. No commitment. Plan automatically renews after trial until cancelled.<br>
+To access and use all the features of Apple Card, you must add Apple Card to Wallet on an iPhone or iPad with iOS or iPadOS 13.2 or later. Update to the latest version of iOS or iPadOS by going to Settings > General > Software Update. Tap Download and Install.<br>
+Available for qualifying applicants in the United States.<br>
+Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.<br>
+Learn more about how Apple Card applications are evaluated at support.apple.com/kb/HT209218.<br>
+Apple TV+ is $4.99/month after free trial. One subscription per Family Sharing group. Offer good for 3 months after eligible device activation. Plan automatically renews until cancelled. Restrictions and other terms apply.
+ <span class="liner">_____________________________________________________________________________________________________________________________________________________________________________________________________________</span>
+</li></ol></p></section>
+ 
+  <section class="footer"><p><ul>
+  </ul></p>
+<p>
+<ul class="first">
+ <li><strong>Shop and Learn</strong></li>
+ <li><a href="#" class="linkup">Mac</a></li>
+ <li><a href="#" class="linkup">iPad</a></li>
+ <li><a href="#" class="linkup">iPhone</a></li>
+ <li><a href="#" class="linkup">Watch</a></li>
+ <li><a href="#" class="linkup">TV</a></li>
+ <li><a href="#" class="linkup">Music</a></li>
+ <li><a href="#" class="linkup">AirPods</a></li>
+ <li><a href="#" class="linkup">HomePod</a></li>
+ <li><a href="#" class="linkup">iPod touch</a></li>
+ <li><a href="#" class="linkup">AirTag</a></li>
+ <li><a href="#" class="linkup">Accessories</a></li>
+ <li><a href="#" class="linkup">Gift Cards</a></li>
+  </ul></p>
+<p><ul>
+<li><strong>Services</strong></li>
+<li><a href="#" class="linkup">Apple Music</a></li>
+<li><a href="#" class="linkup">Apple TV+</a></li>
+<li><a href="#" class="linkup">Apple Fitness+</a></li>
+<li><a href="#" class="linkup">Apple News+</a></li>
+<li><a href="#" class="linkup">Apple Arcade</a></li>
+<li><a href="#" class="linkup">iCloud</a></li>
+<li><a href="#" class="linkup">Apple One</a></li>
+<li><a href="#" class="linkup">Apple Card</a></li>
+<li><a href="#" class="linkup">Apple Books</a></li>
+<li><a href="#" class="linkup">Apple Podcasts</a></li>
+<li><a href="#" class="linkup">App Store</a></li><pre>
+
+</pre>
+<li><strong>Account</strong></li>
+<li><a href="#" class="linkup">Manage Your Apple ID</a></li>
+<li><a href="#" class="linkup">Apple Store Account</a></li>
+<li><a href="#" class="linkup">iCloud.com</a></li>
+  </ul></p>
+<p><ul>
+<li><strong>Apple Store</strong></li>
+<li><a href="#" class="linkup">Find a Store</a></li>
+<li><a href="#" class="linkup">Shop Online</a></li>
+<li><a href="#" class="linkup">Genius Bar</a></li>
+<li><a href="#" class="linkup">Today at Apple</a></li>
+<li><a href="#" class="linkup">Apple Camp</a></li>
+<li><a href="#" class="linkup">Apple Store App</a></li>
+<li><a href="#" class="linkup">Refurbished and Clearance</a></li>
+<li><a href="#" class="linkup">Financing</a></li>
+<li><a href="#" class="linkup">Apple Trade In</a></li>
+<li><a href="#" class="linkup">Order Status</a></li>
+<li><a href="#" class="linkup">Shopping Help</a></li>
+  </ul></p>
+<p><ul>
+<li><strong>For Business</strong></li>
+<li><a href="#" class="linkup">Apple and Business</a></li>
+<li><a href="#" class="linkup">Shop for Business</a></li><br>
+<li><strong>For Education</a></strong></li>
+<li><a href="#" class="linkup">Apple and Education</a></li>
+<li><a href="#" class="linkup">Shop for K-12</a></li>
+<li><a href="#" class="linkup">Shop for College</a></li><br>
+<li><strong>For Healthcare</strong></li>
+<li><a href="#" class="linkup">Apple in Healthcare</a></li>
+<li><a href="#" class="linkup">Health on Apple Watch</a></li>
+<li><a href="#" class="linkup">Health Records on iPhone</a></li><br>
+<li><strong>For Government</strong></li>
+<li><a href="#" class="linkup">Shop for Government</a></li>
+<li><a href="#" class="linkup">Shop for Veterans and Military</a></li>
+</ul></p>
+<p><ul>
+<li><strong>Apple Values</strong></li>
+<li><a href="#" class="linkup">Accessibility</a></li>
+<li><a href="#" class="linkup">Education</a></li>
+<li><a href="#" class="linkup">Environment</a></li>
+<li><a href="#" class="linkup">Inclusion and Diversity</a></li>
+<li><a href="#" class="linkup">Privacy</a></li>
+<li><a href="#" class="linkup">Racial Equity and Justice</a></li>
+<li><a href="#" class="linkup">Supplier Responsibility</a></li><br>
+<li><strong>About Apple</strong></li>
+<li><a href="#" class="linkup">Newsroom</a></li>
+<li><a href="#" class="linkup">Apple Leadership</a></li>
+<li><a href="#" class="linkup">Career Opportunities</a></li>
+<li><a href="#" class="linkup">Investors</a></li>
+<li><a href="#" class="linkup">Ethics & Compliance</a></li>
+<li><a href="#" class="linkup">Events</a></li>
+<li><a href="#" class="linkup">Contact Apple</a></li>
+</ul></p>
+</section>
+  <section class="footer2">
+  <p style="text-align:left;"><span style="text-align:left;">
+  More ways to shop:  <span class="linkerage">Find an Apple Store</span> or <span class="linkerage">other retailer</span> near you. Or call 1-800-MY-APPLE.
+  _____________________________________________________________________________________________________________________________________________________________________________________________________________
+  </p></section>
+   <section class="footer3">
+   <p><pre>Copyright © 2021 Apple Inc.All rights reserved.	  <span class="linkos">Privacy Policy</span> | <span class="linkos">Terms of Use</span> | <span class="linkos">Sales and Refunds</span> | <span class="linkos">Legal</span> | <span class="linkos">Site Map</span>			      <span class="linkos">United States</span></pre></p></section>
+  </body>
+</html>
